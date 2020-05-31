@@ -1,0 +1,6 @@
+.MovieSection-div {
+    padding: 20px;
+    display: flex;
+    z-index: 2;
+    flex-direction: column;
+}

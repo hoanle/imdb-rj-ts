@@ -1,0 +1,12 @@
+.TopTvs-main-div{
+    background-color: transparent;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.TopTvs-main-div h5 {
+    color: white;
+    font-size: 25px;
+    font-weight: 800;
+    font-family: fantasy
+}

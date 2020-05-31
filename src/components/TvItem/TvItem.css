@@ -1,0 +1,60 @@
+.TvItem-div {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-right: 5px !important;
+    padding-left: 5px !important;
+}
+
+.TvItem-detail {
+    justify-content: start;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: white;
+}
+
+.TvItem-detail-title {
+    color: yellowgreen;
+    font-size: 18px;
+    padding-top: 10px;
+    font-weight: bold;
+    text-align: start;
+    font-family: fantasy
+}
+
+.TvItem-detail-title:hover {
+    color: red;
+    font-size: 20px;
+    padding-top: 10px;
+    font-weight: bold;
+    text-align: start;
+    font-family: fantasy
+}
+
+.TvItem-detail-genre {
+    padding-left: 0px !important;
+    text-align: start;
+    color: yellow;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.TvItem-image {
+    width: 90%;
+    
+}
+.TvItem-image:hover {
+    object-fit: none;
+    opacity: 0.5;
+
+}
+
+.TvItem-detail-release-date {
+    padding-left: 0px !important;
+    text-align: start;
+    color: yellow;
+    font-weight: bold;
+    font-size: 12px;
+    padding-bottom: 10px;
+}

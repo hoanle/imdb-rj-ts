@@ -1,0 +1,40 @@
+.TopMovieItem-div{
+   background-color: transparent;
+   border-color: white;
+   border-width: 2px;
+   border-style: groove;
+   margin: 10px;
+   display: flex;
+   flex-direction: row;
+   justify-content: start;
+   align-items: flex-start;
+   text-align: start;
+   padding-left: 0px !important;
+}
+
+.TopMovieItem-detail {
+    padding: 10px;
+    color: white;
+}
+
+.TopMovieItem-detail-title {
+    color:yellowgreen;
+    font-size: 17px;
+    font-weight: bold;
+    font-family: fantasy
+}
+
+
+.TopMovieItem-detail-score {
+    padding-left: 0px !important;
+    color: crimson;
+}
+
+.no-padding {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.TopMovieItem-image {
+    width: 100%;
+}

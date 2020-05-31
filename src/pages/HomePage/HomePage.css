@@ -1,0 +1,12 @@
+.HomePage-main-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.HomePage-moviesection-div {
+    background-color: black;
+}
+
+.HomePage-topmovies-div {
+    background-color: black;
+}

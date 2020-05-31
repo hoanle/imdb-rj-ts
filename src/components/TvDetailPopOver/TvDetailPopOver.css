@@ -1,0 +1,13 @@
+.TvDetailPopOver-div  {
+    background-color: #000000;
+    width: 300px !important;
+    color: white;
+    padding: 10px;
+    font-size: 15px;
+}
+
+.TvDetailPopOver-title {
+    font-size: 20px;
+    font-family: fantasy;
+    color: yellowgreen;
+}

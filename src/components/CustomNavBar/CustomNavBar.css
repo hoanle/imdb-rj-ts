@@ -1,0 +1,45 @@
+.CustomNavBar-link {
+    color: white;
+    font-family: fantasy;
+    font-size: 25px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.CustomNavBar-link:hover {
+    color: yellowgreen;
+    font-family: fantasy;
+    font-size: 25px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+}
+.CustomNavBar-navbar {
+    background-color: black;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.CustomNavBar-navbar-brand {
+    padding: 20px !important;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    font-size: 30px !important;
+    font-family: fantasy;
+    flex-direction: column;
+    color: white !important;
+}
+
+.CustomNavBar-navbar-toggle {
+    background-color: wheat;
+    color: white !important;
+}

@@ -1,0 +1,30 @@
+.BannerMovies-div {
+    background-color: slategrey;
+}
+
+.BannerMovies-title {
+    font-size: 30px;
+    color: yellow;
+    font-weight: bold;
+    background-color: #11111144;
+    padding: 10px;
+}
+
+.BannerMovies-overview {
+    font-size: 15px;
+    color: white;
+    max-lines: 3;
+    overflow: -moz-hidden-unscrollable;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.BannerMovies-detail-div {
+    background-color: #000000ee !important;
+    padding: 20px;
+}
+
+.BannerMovies-img {
+    height: 500px !important;
+    object-fit: cover;
+}

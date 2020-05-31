@@ -1,0 +1,12 @@
+.TvPage-main-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.TvPage-tvsection-div {
+    background-color: black;
+}
+
+.TvPage-toptv-div {
+    background-color: black;
+}

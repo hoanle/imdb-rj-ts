@@ -1,0 +1,45 @@
+.ListMovie-div {
+    background-color: transparent;
+    display: -moz-grid;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 20px;
+}
+
+.ListMovie-pagination {
+    padding: 10px;
+    min-width: 40px;
+    border-color: white;
+    border-style: solid;
+    border-width: 1px;
+    color: white;
+    font-family: fantasy;
+    background-color: transparent !important;
+}
+
+.ListMovie-paginattion-break {
+    border: transparent;
+    padding: 10px;
+    border-color: transparent;
+    border-style: solid;
+    color: white;
+    font-family: fantasy;
+    background-color: transparent !important;
+}
+.ListMovie-paginattion-active {
+    color: black;
+    font-weight: bold;
+    font-family: fantasy;
+    background-color: white !important;
+}
+
+.ListMovie-pagination-container {
+    justify-content: flex-start;
+    padding-right: 0px !important;
+}
+
+.ListMovie-item-div {
+    padding-left: 0px !important;
+    padding-right: 5px !important;
+}
