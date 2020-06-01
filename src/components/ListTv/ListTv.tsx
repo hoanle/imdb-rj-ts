@@ -24,9 +24,9 @@ const ListTv = (props: ListTvProps) => {
 
     const getPopularTvs = (page: number) => {
         TvApis.getPopularTvList(page).then((response: any) => {
-            tvs?.set(page-1, response.data.results);
+            tvs?.set(page - 1, response.data.results);
             setTvs(tvs);
-            setActivePage(page-1);
+            setActivePage(page - 1);
             setSetRender(true);
         }).catch((error: any) => {
             console.log("Error happened");
@@ -38,19 +38,19 @@ const ListTv = (props: ListTvProps) => {
         console.log(selectedPage)
         if (tvs.get(selectedPage) == null) {
             setSetRender(false);
-            getPopularTvs(selectedPage+1)
+            getPopularTvs(selectedPage + 1)
             setActivePage(selectedPage);
         } else {
             setActivePage(selectedPage);
             setSetRender(true);
         }
-       
+
     }
 
     useEffect(() => {
 
         if (props.configuration != undefined) {
-            getPopularTvs(activePage+1);
+            getPopularTvs(activePage + 1);
         }
 
         return () => {
@@ -58,44 +58,42 @@ const ListTv = (props: ListTvProps) => {
         }
     }, [props.configuration, shouldRender])
 
-    if (shouldRender) {
-
-        return (
-            <Container className="ListTv-div">
-                <Row className="ListTv-pagination-container">
-                    <ReactPaginate
-                        previousLabel={'previous'}
-                        nextLabel={'next'}
-                        breakLabel={'...'}
-                        breakClassName={'ListTv-pagination-break'}
-                        pageCount={100}
-                        initialPage={0}
-                        forcePage={activePage}
-                        marginPagesDisplayed={2}
-                        pageRangeDisplayed={5}
-                        onPageChange={handlePageClick}
-                        pageClassName="ListTv-pagination"
-                        previousClassName="ListTv-pagination"
-                        nextClassName="ListTv-pagination"
-                        containerClassName="pagination"
-                        activeClassName={'ListTv-paginattion-active'}
-                    />
-                </Row>
-                <Row className="ListTv-pagination-container">
-                    {
+    return (
+        <Container className="ListTv-div">
+            <Row className="ListTv-pagination-container">
+                <ReactPaginate
+                    previousLabel={'previous'}
+                    nextLabel={'next'}
+                    breakLabel={'...'}
+                    breakClassName={'ListTv-pagination-break'}
+                    pageCount={100}
+                    initialPage={0}
+                    forcePage={activePage}
+                    marginPagesDisplayed={2}
+                    pageRangeDisplayed={5}
+                    onPageChange={handlePageClick}
+                    pageClassName="ListTv-pagination"
+                    previousClassName="ListTv-pagination"
+                    nextClassName="ListTv-pagination"
+                    containerClassName="pagination"
+                    activeClassName={'ListTv-paginattion-active'}
+                />
+            </Row>
+            <Row className="ListTv-pagination-container">
+                {
+                    shouldRender ?
                         tvs.get(activePage)?.map(tv => {
                             return (<div key={tv.id} className="col-md-4 sol-sm-12 ListMovie-item-div">
                                 <TvItem tv={tv} configuration={props.configuration} />
                             </div>)
                         })
-                    }
-                </Row>
+                        : <div className="expanded">Loading</div>
+                }
+            </Row>
 
-            </Container>
-        );
-    } else {
-        return <div>Loading</div>
-    }
+        </Container>
+    );
+
 }
 
 export default ListTv;

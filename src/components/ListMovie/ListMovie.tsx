@@ -22,9 +22,9 @@ const ListMovie = (props: ListMovieProps) => {
 
     const getPopularMovies = (page: number) => {
         MovieApis.getPopularMovieList(page).then((response: any) => {
-            movies?.set(page-1, response.data.results);
+            movies?.set(page - 1, response.data.results);
             setMovies(movies);
-            setActivePage(page-1);
+            setActivePage(page - 1);
             setSetRender(true);
         }).catch((error: any) => {
             console.log("Error happened");
@@ -36,19 +36,19 @@ const ListMovie = (props: ListMovieProps) => {
         console.log(selectedPage)
         if (movies.get(selectedPage) == null) {
             setSetRender(false);
-            getPopularMovies(selectedPage+1)
+            getPopularMovies(selectedPage + 1)
             setActivePage(selectedPage);
         } else {
             setActivePage(selectedPage);
             setSetRender(true);
         }
-       
+
     }
 
     useEffect(() => {
 
         if (props.configuration != undefined) {
-            getPopularMovies(activePage+1);
+            getPopularMovies(activePage + 1);
         }
 
         return () => {
@@ -56,45 +56,42 @@ const ListMovie = (props: ListMovieProps) => {
         }
     }, [props.configuration, shouldRender])
 
-    if (shouldRender) {
-
-        return (
-            <Container className="ListMovie-div">
-                <Row className="ListMovie-pagination-container">
-                    <ReactPaginate
-                        previousLabel={'previous'}
-                        nextLabel={'next'}
-                        breakLabel={'...'}
-                        breakClassName={'ListMovie-pagination-break'}
-                        pageCount={100}
-                        initialPage={0}
-                        forcePage={activePage}
-                        marginPagesDisplayed={2}
-                        pageRangeDisplayed={5}
-                        onPageChange={handlePageClick}
-                        pageClassName="ListMovie-pagination"
-                        previousClassName="ListMovie-pagination"
-                        nextClassName="ListMovie-pagination"
-                        containerClassName="pagination"
-                        activeClassName={'ListMovie-paginattion-active'}
-                    />
-                </Row>
-                <Row className="ListMovie-pagination-container">
-                    {
+    return (
+        <Container className="ListMovie-div">
+            <Row className="ListMovie-pagination-container">
+                <ReactPaginate
+                    previousLabel={'previous'}
+                    nextLabel={'next'}
+                    breakLabel={'...'}
+                    breakClassName={'ListMovie-pagination-break'}
+                    pageCount={100}
+                    initialPage={0}
+                    forcePage={activePage}
+                    marginPagesDisplayed={2}
+                    pageRangeDisplayed={5}
+                    onPageChange={handlePageClick}
+                    pageClassName="ListMovie-pagination"
+                    previousClassName="ListMovie-pagination"
+                    nextClassName="ListMovie-pagination"
+                    containerClassName="pagination"
+                    activeClassName={'ListMovie-paginattion-active'}
+                />
+            </Row>
+            <Row className="ListMovie-pagination-container">
+                {
+                    shouldRender ?
                         movies.get(activePage)?.map(movie => {
                             return (<div key={movie.id} className="col-md-3 sol-sm-12 ListMovie-item-div">
                                 <MovieItem movie={movie} configuration={props.configuration} />
                             </div>)
                         })
-                    }
-                </Row>
+                        : <div>Loading</div>
+                }
+            </Row>
 
-            </Container>
-        );
-    } else {
-        console.log("Should Render false");
-        return <div>Loading</div>
-    }
+        </Container>
+    );
+
 }
 
 export default ListMovie;

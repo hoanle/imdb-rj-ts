@@ -10,8 +10,19 @@ import { faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons'
 const VideoPopup = (props: VideoPopupProps) => {
     const [videoId, setVideoId] = useState(undefined)
 
-    const getMovieVideo = async () => {
+    const getMovieVideo = () => {
         VideoApis.getMovieVideos(props.id).then((response: any) => {
+            console.log(response.data)
+            let results = response.data.results;
+
+            if (results != null && results.length > 0) {
+                setVideoId(results[0].key)
+            }
+        });
+    }
+
+    const getTvVideo = () => {
+        VideoApis.getTvVideos(props.id).then((response: any) => {
             console.log(response.data)
             let results = response.data.results;
 
@@ -24,6 +35,8 @@ const VideoPopup = (props: VideoPopupProps) => {
     useEffect(() => {
         if (props.isMovie) {
             getMovieVideo()
+        } else {
+            getTvVideo()
         }
         
     }, [videoId])

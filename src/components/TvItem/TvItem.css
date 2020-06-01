@@ -58,3 +58,48 @@
     font-size: 12px;
     padding-bottom: 10px;
 }
+
+
+.Modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2 !important;
+    right: 0;
+    bottom: 0;
+    background-color: papayawhip;
+  }
+
+  .Overlay {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2 !important;
+    bottom: 0;
+    background-color: rebeccapurple;
+  }
+
+  .VideoPopup {
+      z-index: 2 !important;
+  }
+
+  .Modal-backdrop {
+    z-index: 2 !important;
+  }
+
+  .TvItem-play {
+    position: absolute;
+    bottom: 10px;
+    right: 40px;
+    color: white;
+    font-size: 25px;
+  }
+
+  .TvItem-play:hover {
+    position: absolute;
+    bottom: 10px;
+    right: 40px;
+    color: yellowgreen;
+    font-size: 25px;
+  }
