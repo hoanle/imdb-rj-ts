@@ -9,6 +9,7 @@ import Image from 'react-bootstrap/Image';
 import Configuration from '../../types/Configuration';
 import MovieDetailPopOver from '../MovieDetailPopOver/MovieDetailPopOver';
 import MovieResult from './../../types/MovieResult';
+import ReactModal from 'react-modal';
 
 type MovieItemProps = {
     movie: MovieResult,
@@ -29,6 +30,7 @@ const MovieItem = (props: MovieItemProps) => {
 
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = useState(null);
+    const [openModal, setOpenModal] = useState(false);
 
     const getMovieGenre = (genre_ids: number[]) => {
         return props.configuration?.genres.filter(x => {
@@ -43,6 +45,14 @@ const MovieItem = (props: MovieItemProps) => {
     const handlePopoverClose = () => {
         setAnchorEl(null);
     };
+
+    const closePopupModal = () => {
+        setOpenModal(false)
+    }
+
+    const openPopupModal = () => {
+        setOpenModal(true)
+    }
 
     const open = Boolean(anchorEl);
 
@@ -78,6 +88,10 @@ const MovieItem = (props: MovieItemProps) => {
                     <div className="MovieItem-detail-title" onMouseEnter={handlePopoverOpen} onMouseLeave={handlePopoverClose} >{props.movie.title}</div>
                         Genre: <div className="MovieItem-detail-genre">{getMovieGenre(props.movie.genre_ids)}</div>
                         Release date: <div className="MovieItem-detail-release-date">{props.movie.release_date}</div>
+                    <button onClick={() => openPopupModal()}>Watch Trailer</button>
+                    <ReactModal isOpen={true}>
+                        <button onClick={() => closePopupModal()}>Exit</button>
+                    </ReactModal>
                 </div>
             </Container>
         )
