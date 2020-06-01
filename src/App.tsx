@@ -7,7 +7,9 @@ import { Route } from 'react-router-dom';
 import TvPage from './pages/TvPage/TvPage';
 import Configuration from './types/Configuration';
 import MovieApis from './apis/MovieApis';
-import { configure } from '@testing-library/react';
+import Modal from 'react-modal';
+
+Modal.setAppElement('#root')
 
 const App = () => {
   const [configuration, setConfiguration] = useState<Configuration | undefined>(undefined);

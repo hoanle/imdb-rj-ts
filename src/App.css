@@ -1,5 +1,9 @@
 .App {
+  position: relative;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  z-index: 0;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -18,13 +22,16 @@
 }
 
 .App-homepage-navbar {
-  position: sticky;
-  top: 0;
+  position: fixed;
   background-color: black;
   z-index: 1;
   height: 100;
+  left: 0;
+  top: 0;
+  right: 0;
 }
 
 .App-homepage-container {
+  z-index: 0;
   background-color: black;
 }
