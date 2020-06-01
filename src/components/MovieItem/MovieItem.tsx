@@ -65,7 +65,7 @@ const MovieItem = (props: MovieItemProps) => {
         return (
             <Container className="MovieItem-div">
                 <Image src={url} className="MovieItem-image" />
-                <FontAwesomeIcon icon={faPlayCircle} className="MovieItem-play" onClick={() => openPopupModal()}/>
+                <FontAwesomeIcon icon={faPlayCircle} className="MovieItem-play" onClick={() => openPopupModal()} />
                 <Popover
                     id="mouse-over-popover"
                     className={classes.popover}
@@ -93,7 +93,7 @@ const MovieItem = (props: MovieItemProps) => {
                         Genre: <div className="MovieItem-detail-genre">{getMovieGenre(props.movie.genre_ids)}</div>
                         Release date: <div className="MovieItem-detail-release-date">{props.movie.release_date}</div>
                 </div>
-                <ReactModal isOpen={openModal} className="Modal">
+                <ReactModal isOpen={openModal} className="Modal" closeTimeoutMS={200}>
                     <VideoPopup id={props.movie.id} isMovie={true} onClose={closePopupModal} />
                 </ReactModal>
 

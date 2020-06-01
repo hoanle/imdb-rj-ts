@@ -43,10 +43,10 @@
 .MovieItem-image {
     width: 90%;
 }
+
 .MovieItem-image:hover {
     object-fit: none;
     opacity: 0.7;
-
 }
 
 .MovieItem-detail-release-date {
@@ -66,9 +66,9 @@
     right: 0;
     bottom: 0;
     background-color: papayawhip;
-  }
+}
 
-  .Overlay {
+.Overlay {
     position: relative;
     top: 0;
     left: 0;
@@ -76,28 +76,41 @@
     z-index: 2 !important;
     bottom: 0;
     background-color: rebeccapurple;
-  }
+}
 
-  .VideoPopup {
-      z-index: 2 !important;
-  }
+.Modal__Overlay {
+    opacity: 0;
+    transition: scale 200ms ease-in-out;
+}
 
-  .Modal-backdrop {
+.Modal__Overlay--after-open {
+    opacity: 1;
+}
+
+.Modal__Overlay--before-close {
+    opacity: 0;
+}
+
+.VideoPopup {
     z-index: 2 !important;
-  }
+}
 
-  .MovieItem-play {
+.Modal-backdrop {
+    z-index: 2 !important;
+}
+
+.MovieItem-play {
     position: absolute;
     bottom: 10px;
     right: 40px;
     color: white;
     font-size: 25px;
-  }
+}
 
-  .MovieItem-play:hover {
+.MovieItem-play:hover {
     position: absolute;
     bottom: 10px;
     right: 40px;
     color: yellowgreen;
     font-size: 25px;
-  }
+}
